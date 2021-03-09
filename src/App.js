@@ -9,10 +9,13 @@ import {
 
 import PostList from "./features/posts/PostList";
 import AddPostForm from "./features/posts/AddPostForm";
+import SinglePostPage from "./features/posts/SinglePostPage";
+import NavBar from "./app/NavBar";
 
 function App() {
   return (
     <Router>
+      <NavBar />
       <div className="App">
         <Switch>
           <Route
@@ -25,6 +28,7 @@ function App() {
               </React.Fragment>
             )}
           />
+          <Route exact path="/posts/:postId" component={SinglePostPage} />
           <Redirect to="/" />
         </Switch>
       </div>
